@@ -1,0 +1,83 @@
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6fb;
+    color:#222;
+}
+
+header{
+    background:#071a3d;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+
+.logo{
+    font-size:40px;
+    font-weight:bold;
+    color:#d4af37;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
+}
+
+nav a:hover{
+    color:#d4af37;
+}
+
+.hero{
+    background:linear-gradient(135deg,#071a3d,#174c8f);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+.hero span{
+    color:#d4af37;
+}
+
+.btn{
+    background:#d4af37;
+    color:#071a3d;
+    padding:15px 30px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.card{
+    background:white;
+    max-width:800px;
+    margin:30px auto;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 5px 20px #ccc;
+}
+
+h1,h2{
+    color:#071a3d;
+}
+
+footer{
+    background:#071a3d;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:600px){
+
+nav a{
+    display:block;
+    margin:15px;
+}
+
+.hero h1{
+    font-size:30px;
+}
+
+}
