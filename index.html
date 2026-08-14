@@ -2,240 +2,497 @@
 
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DROIT - Votre assistant juridique</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DROIT - Apprendre le droit</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f8fc;
-      color: #17324d;
-    }
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f8fc;
+  color: #17324d;
+}
 
-    header {
-      background: #0756a3;
-      color: white;
-      padding: 20px;
-    }
+header {
+  background: #0756a3;
+  color: white;
+  padding: 18px 20px;
+}
 
-    nav {
-      max-width: 1100px;
-      margin: auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+nav {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-    .logo {
-      font-size: 28px;
-      font-weight: bold;
-    }
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .hero {
-      max-width: 1100px;
-      margin: auto;
-      padding: 80px 20px;
-      text-align: center;
-    }
+.hero {
+  text-align: center;
+  padding: 70px 20px;
+  background: white;
+}
 
-    .hero h1 {
-      font-size: 48px;
-      color: #0756a3;
-      margin-bottom: 15px;
-    }
+.hero h1 {
+  color: #0756a3;
+  font-size: 46px;
+  margin-bottom: 15px;
+}
 
-    .hero p {
-      font-size: 21px;
-      margin-bottom: 30px;
-    }
+.hero p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
 
-    .button {
-      display: inline-block;
-      background: #0756a3;
-      color: white;
-      padding: 15px 30px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-      border: none;
-    }
+.button {
+  background: #0756a3;
+  color: white;
+  border: none;
+  padding: 13px 25px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .button:hover {
-      background: #043d75;
-    }
+.button:hover {
+  background: #043d75;
+}
 
-    .sections {
-      max-width: 1100px;
-      margin: 0 auto 60px;
-      padding: 20px;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
-    }
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 45px 20px;
+}
 
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-      text-align: center;
-    }
+.page h2 {
+  color: #0756a3;
+  text-align: center;
+  margin-bottom: 12px;
+}
 
-    .card .icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
+.page-intro {
+  text-align: center;
+  margin-bottom: 30px;
+}
 
-    .card h2 {
-      color: #0756a3;
-      margin-bottom: 12px;
-    }
+.subjects {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 
-    .card p {
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
 
-    footer {
-      background: #07345f;
-      color: white;
-      text-align: center;
-      padding: 25px;
-    }
+.card .icon {
+  font-size: 38px;
+  margin-bottom: 12px;
+}
 
-    @media (max-width: 700px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
+.card h3 {
+  color: #0756a3;
+  margin-bottom: 12px;
+}
 
-      nav a {
-        margin: 0 8px;
-      }
+.card p {
+  line-height: 1.5;
+  margin-bottom: 18px;
+}
 
-      .hero {
-        padding: 55px 20px;
-      }
+.course {
+  display: none;
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
 
-      .hero h1 {
-        font-size: 36px;
-      }
+.course h2 {
+  text-align: left;
+}
 
-      .hero p {
-        font-size: 18px;
-      }
+.chapter {
+  border-left: 4px solid #0756a3;
+  padding: 15px;
+  margin: 15px 0;
+  background: #f4f8fc;
+  border-radius: 6px;
+}
 
-      .sections {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+.chapter h3 {
+  color: #0756a3;
+  margin-bottom: 8px;
+}
+
+.search {
+  max-width: 600px;
+  margin: 0 auto 30px;
+  display: flex;
+}
+
+.search input {
+  flex: 1;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px 0 0 8px;
+  font-size: 16px;
+}
+
+.search button {
+  border-radius: 0 8px 8px 0;
+}
+
+footer {
+  background: #07345f;
+  color: white;
+  text-align: center;
+  padding: 25px;
+  margin-top: 50px;
+}
+
+@media (max-width: 750px) {
+
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0 7px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .subjects {
+    grid-template-columns: 1fr;
+  }
+
+  .search {
+    flex-direction: column;
+  }
+
+  .search input,
+  .search button {
+    border-radius: 8px;
+    width: 100%;
+    margin-bottom: 8px;
+  }
+}
+</style>
 
 </head>
 
 <body>
 
-  <header>
-    <nav>
-      <div class="logo">⚖️ DROIT</div>
+<header>
+<nav>
+<div class="logo">⚖️ DROIT</div>
 
-```
-  <div>
-    <a href="#accueil">Accueil</a>
-    <a href="#cours">Cours</a>
-    <a href="#documents">Documents</a>
-    <a href="#recherche">Recherche</a>
-  </div>
+<div>
+<a onclick="accueil()">Accueil</a>
+<a onclick="cours()">Cours</a>
+<a onclick="documents()">Documents</a>
+<a onclick="recherche()">Recherche</a>
+</div>
+
 </nav>
-```
+</header>
 
-  </header>
+<main>
 
-  <main>
-
-```
 <section class="hero" id="accueil">
-  <h1>DROIT</h1>
-  <p>Votre assistant juridique</p>
+<h1>DROIT</h1>
+<p>Apprendre le droit simplement</p>
 
-  <button class="button" onclick="commencer()">
-    COMMENCER
-  </button>
+<button class="button" onclick="cours()">
+COMMENCER
+</button>
 </section>
 
-<section class="sections" id="cours">
+<section class="page" id="coursPage">
 
-  <div class="card">
-    <div class="icon">📚</div>
-    <h2>Cours de droit</h2>
-    <p>
-      Découvrez les principales matières du droit
-      et apprenez progressivement.
-    </p>
-    <button class="button" onclick="message('Les cours de droit arrivent bientôt.')">
-      Voir les cours
-    </button>
-  </div>
+<h2>📚 Cours de droit</h2>
 
-  <div class="card" id="documents">
-    <div class="icon">📄</div>
-    <h2>Documents juridiques</h2>
-    <p>
-      Retrouvez vos documents et ressources juridiques
-      au même endroit.
-    </p>
-    <button class="button" onclick="message('Les documents juridiques arrivent bientôt.')">
-      Voir les documents
-    </button>
-  </div>
+<p class="page-intro">
+Découvrez les principales matières juridiques.
+</p>
 
-  <div class="card" id="recherche">
-    <div class="icon">🔎</div>
-    <h2>Recherche</h2>
-    <p>
-      Recherchez rapidement une notion ou un sujet
-      juridique.
-    </p>
-    <button class="button" onclick="message('La recherche sera disponible bientôt.')">
-      Rechercher
-    </button>
-  </div>
+<div class="subjects">
+
+<div class="card">
+<div class="icon">⚖️</div>
+<h3>Droit civil</h3>
+<p>Personnes, biens, contrats et responsabilité.</p>
+<button class="button" onclick="ouvrirCours('civil')">Voir les cours</button>
+</div>
+
+<div class="card">
+<div class="icon">⚖️</div>
+<h3>Droit pénal</h3>
+<p>Infractions, responsabilité pénale et sanctions.</p>
+<button class="button" onclick="ouvrirCours('penal')">Voir les cours</button>
+</div>
+
+<div class="card">
+<div class="icon">🏛️</div>
+<h3>Droit constitutionnel</h3>
+<p>Constitution, institutions et organisation de l'État.</p>
+<button class="button" onclick="ouvrirCours('constitutionnel')">Voir les cours</button>
+</div>
+
+<div class="card">
+<div class="icon">🏢</div>
+<h3>Droit administratif</h3>
+<p>Administration, services publics et actes administratifs.</p>
+<button class="button" onclick="ouvrirCours('administratif')">Voir les cours</button>
+</div>
+
+<div class="card">
+<div class="icon">💼</div>
+<h3>Droit des affaires</h3>
+<p>Entreprises, sociétés et activités commerciales.</p>
+<button class="button" onclick="ouvrirCours('affaires')">Voir les cours</button>
+</div>
+
+<div class="card">
+<div class="icon">👷</div>
+<h3>Droit du travail</h3>
+<p>Employeurs, salariés et contrats de travail.</p>
+<button class="button" onclick="ouvrirCours('travail')">Voir les cours</button>
+</div>
+
+</div>
+
+<div class="course" id="courseDetail"></div>
 
 </section>
-```
 
-  </main>
+<section class="page" id="documentsPage" style="display:none;">
 
-  <footer>
-    <p>© 2026 DROIT — Votre assistant juridique</p>
-  </footer>
+<h2>📄 Documents juridiques</h2>
 
-  <script>
-    function commencer() {
-      document.getElementById("cours").scrollIntoView({
-        behavior: "smooth"
-      });
-    }
+<p class="page-intro">
+Cette section permettra bientôt de consulter des documents juridiques.
+</p>
 
-    function message(texte) {
-      alert(texte);
-    }
-  </script>
+<div class="card">
+<p>
+Nous ajouterons progressivement des documents et références
+juridiques vérifiés.
+</p>
+</div>
+
+</section>
+
+<section class="page" id="recherchePage" style="display:none;">
+
+<h2>🔎 Recherche juridique</h2>
+
+<p class="page-intro">
+Recherchez une matière ou une notion juridique.
+</p>
+
+<div class="search">
+<input id="searchInput" type="text" placeholder="Exemple : contrat, responsabilité...">
+<button class="button" onclick="rechercher()">Rechercher</button>
+</div>
+
+<div id="resultatRecherche"></div>
+
+</section>
+
+</main>
+
+<footer>
+<p>© 2026 DROIT — Application juridique</p>
+</footer>
+
+<script>
+
+function cacherPages() {
+  document.getElementById("accueil").style.display = "none";
+  document.getElementById("coursPage").style.display = "none";
+  document.getElementById("documentsPage").style.display = "none";
+  document.getElementById("recherchePage").style.display = "none";
+}
+
+function accueil() {
+  cacherPages();
+  document.getElementById("accueil").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+function cours() {
+  cacherPages();
+  document.getElementById("coursPage").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+function documents() {
+  cacherPages();
+  document.getElementById("documentsPage").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+function recherche() {
+  cacherPages();
+  document.getElementById("recherchePage").style.display = "block";
+  window.scrollTo(0,0);
+}
+
+function ouvrirCours(matiere) {
+
+  const detail = document.getElementById("courseDetail");
+
+  let titre = "";
+  let chapitres = [];
+
+  if (matiere === "civil") {
+    titre = "⚖️ Droit civil";
+    chapitres = [
+      "Introduction au droit civil",
+      "Les personnes",
+      "Les biens",
+      "Les obligations",
+      "Les contrats",
+      "La responsabilité civile"
+    ];
+  }
+
+  if (matiere === "penal") {
+    titre = "⚖️ Droit pénal";
+    chapitres = [
+      "Introduction au droit pénal",
+      "Les infractions",
+      "La responsabilité pénale",
+      "Les sanctions",
+      "La procédure pénale"
+    ];
+  }
+
+  if (matiere === "constitutionnel") {
+    titre = "🏛️ Droit constitutionnel";
+    chapitres = [
+      "Introduction au droit constitutionnel",
+      "La Constitution",
+      "Les institutions",
+      "Les pouvoirs de l'État",
+      "Les droits fondamentaux"
+    ];
+  }
+
+  if (matiere === "administratif") {
+    titre = "🏢 Droit administratif";
+    chapitres = [
+      "Introduction au droit administratif",
+      "L'administration",
+      "Les services publics",
+      "Les actes administratifs",
+      "Le contentieux administratif"
+    ];
+  }
+
+  if (matiere === "affaires") {
+    titre = "💼 Droit des affaires";
+    chapitres = [
+      "Introduction au droit des affaires",
+      "Le commerçant",
+      "Les sociétés",
+      "Les contrats commerciaux",
+      "Les activités commerciales"
+    ];
+  }
+
+  if (matiere === "travail") {
+    titre = "👷 Droit du travail";
+    chapitres = [
+      "Introduction au droit du travail",
+      "Le contrat de travail",
+      "Les droits du salarié",
+      "Les obligations de l'employeur",
+      "La fin du contrat de travail"
+    ];
+  }
+
+  let html = "<h2>" + titre + "</h2>";
+
+  html += "<p>Voici les principaux chapitres de cette matière.</p>";
+
+  chapitres.forEach(function(chapitre, index) {
+    html += `
+      <div class="chapter">
+        <h3>Chapitre ${index + 1}</h3>
+        <p>${chapitre}</p>
+        <button class="button" onclick="alert('Le contenu détaillé de ce chapitre sera ajouté prochainement.')">
+          Ouvrir
+        </button>
+      </div>
+    `;
+  });
+
+  html += `
+    <button class="button" onclick="fermerCours()">
+      ← Retour aux matières
+    </button>
+  `;
+
+  detail.innerHTML = html;
+  detail.style.display = "block";
+
+  detail.scrollIntoView({behavior:"smooth"});
+}
+
+function fermerCours() {
+  document.getElementById("courseDetail").style.display = "none";
+}
+
+function rechercher() {
+
+  const texte = document.getElementById("searchInput").value.trim();
+
+  const resultat = document.getElementById("resultatRecherche");
+
+  if (texte === "") {
+    resultat.innerHTML = "<div class='card'><p>Veuillez écrire une recherche.</p></div>";
+    return;
+  }
+
+  resultat.innerHTML = `
+    <div class="card">
+      <h3>🔎 Recherche</h3>
+      <p>Vous avez recherché : <strong>${texte}</strong></p>
+      <p>La recherche juridique complète sera développée dans une prochaine version.</p>
+    </div>
+  `;
+}
+
+</script>
 
 </body>
 </html>
