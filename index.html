@@ -7,880 +7,163 @@
 <title>DROIT - Votre assistant juridique</title>
 
 <style>
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6fb;
+    color:#222;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7fb;
-    color: #222;
-    line-height: 1.6;
+header{
+    background:#071a3d;
+    color:white;
+    padding:20px;
+    text-align:center;
 }
 
-/* HEADER */
-header {
-    background: #0b3d91;
-    color: white;
-    padding: 22px 15px;
-    text-align: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+.logo{
+    font-size:35px;
+    color:#d4af37;
+    font-weight:bold;
 }
 
-header h1 {
-    font-size: 32px;
+nav{
+    margin-top:15px;
 }
 
-header p {
-    font-size: 16px;
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:10px;
+    font-weight:bold;
 }
 
-/* NAVIGATION */
-nav {
-    background: #082d6b;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
-    padding: 10px;
+.hero{
+    background:linear-gradient(#071a3d,#154a8a);
+    color:white;
+    text-align:center;
+    padding:60px 20px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
+.hero h1{
+    font-size:45px;
 }
 
-nav a:hover {
-    background: #0b3d91;
+.hero span{
+    color:#d4af37;
 }
 
-/* HERO */
-.hero {
-    background: white;
-    text-align: center;
-    padding: 55px 20px;
+button{
+    background:#d4af37;
+    color:#071a3d;
+    border:none;
+    padding:15px 30px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:18px;
 }
 
-.hero h2 {
-    color: #0b3d91;
-    font-size: 34px;
-    margin-bottom: 15px;
+section{
+    padding:40px 20px;
+    text-align:center;
 }
 
-.hero p {
-    max-width: 750px;
-    margin: auto;
-    font-size: 18px;
+.box{
+    background:white;
+    margin:20px auto;
+    padding:25px;
+    max-width:700px;
+    border-radius:15px;
+    box-shadow:0 5px 15px #ccc;
 }
 
-/* RECHERCHE */
-.search-box {
-    max-width: 700px;
-    margin: 25px auto 0;
-    display: flex;
-    gap: 10px;
+footer{
+    background:#071a3d;
+    color:white;
+    text-align:center;
+    padding:20px;
 }
 
-.search-box input {
-    flex: 1;
-    padding: 14px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 16px;
-}
-
-.search-box button {
-    background: #0b3d91;
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-/* CONTENU */
-.container {
-    max-width: 1150px;
-    margin: auto;
-    padding: 35px 20px;
-}
-
-.section-title {
-    text-align: center;
-    color: #0b3d91;
-    font-size: 30px;
-    margin-bottom: 30px;
-}
-
-/* MATIERES */
-.subjects {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-}
-
-.subject {
-    background: white;
-    border-radius: 14px;
-    padding: 25px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    border-left: 5px solid #0b3d91;
-}
-
-.subject h3 {
-    color: #0b3d91;
-    font-size: 23px;
-    margin-bottom: 18px;
-}
-
-.subject ul {
-    list-style: none;
-}
-
-.subject li {
-    background: #f0f4fa;
-    margin: 8px 0;
-    padding: 10px 12px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.subject li:hover {
-    background: #dfe9f8;
-    color: #0b3d91;
-}
-
-/* COCC */
-.cocc {
-    margin-top: 30px;
-    background: #fff;
-    border-radius: 14px;
-    padding: 25px;
-    border: 2px solid #0b3d91;
-}
-
-.cocc h3 {
-    color: #0b3d91;
-    margin-bottom: 12px;
-}
-
-/* CHAPITRE */
-.chapter {
-    display: none;
-    background: white;
-    margin-top: 30px;
-    padding: 30px;
-    border-radius: 14px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-}
-
-.chapter.active {
-    display: block;
-}
-
-.chapter h2 {
-    color: #0b3d91;
-    margin-bottom: 15px;
-}
-
-.chapter h3 {
-    margin-top: 20px;
-    color: #333;
-}
-
-.back {
-    display: inline-block;
-    margin-top: 20px;
-    background: #0b3d91;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 7px;
-    text-decoration: none;
-}
-
-/* FOOTER */
-footer {
-    background: #0b3d91;
-    color: white;
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 50px;
-}
-
-footer .name {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-footer a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* MOBILE */
-@media (max-width: 750px) {
-
-    header h1 {
-        font-size: 27px;
-    }
-
-    .hero h2 {
-        font-size: 27px;
-    }
-
-    .subjects {
-        grid-template-columns: 1fr;
-    }
-
-    .search-box {
-        flex-direction: column;
-    }
-
-    .search-box button {
-        width: 100%;
-    }
-
-    nav {
-        justify-content: flex-start;
-        overflow-x: auto;
+@media(max-width:600px){
+    .hero h1{
+        font-size:32px;
     }
 }
 </style>
+
 </head>
 
 <body>
 
-<!-- HEADER -->
 <header>
-    <h1>⚖️ DROIT</h1>
-    <p>Votre assistant juridique</p>
-</header>
 
-<!-- NAVIGATION -->
+<div class="logo">
+⚖️ DROIT
+</div>
+
 <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#cours">Cours de droit</a>
-    <a href="#recherche">Recherche</a>
-    <a href="#apropos">À propos</a>
+<a href="index.html">Accueil</a>
+<a href="cours.html">Cours</a>
+<a href="recherche.html">Recherche</a>
+<a href="apropos.html">À propos</a>
 </nav>
 
-<!-- ACCUEIL -->
-<section class="hero" id="accueil">
+</header>
 
-    <h2>Bienvenue sur DROIT</h2>
 
-    <p>
-        Une plateforme pour apprendre et comprendre les principales
-        matières du droit.
-    </p>
+<div class="hero">
 
-    <div class="search-box" id="recherche">
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Rechercher un cours ou un chapitre..."
-            onkeyup="searchCourses()"
-        >
-
-        <button onclick="searchCourses()">
-            🔎 Rechercher
-        </button>
-    </div>
-
-</section>
-
-<!-- COURS -->
-<main class="container" id="cours">
-
-<h2 class="section-title">
-    📚 Cours de droit
-</h2>
-
-<div class="subjects">
-
-<!-- 1 DROIT CIVIL -->
-<div class="subject">
-
-<h3>1. ⚖️ Droit civil</h3>
-
-<ul>
-<li onclick="showChapter('civil-intro')">
-    Introduction
-</li>
-
-<li onclick="showChapter('civil-personnes')">
-    Les personnes
-</li>
-
-<li onclick="showChapter('civil-biens')">
-    Les biens
-</li>
-
-<li onclick="showChapter('civil-obligations')">
-    Les obligations
-</li>
-
-<li onclick="showChapter('civil-contrats')">
-    Les contrats
-</li>
-
-<li onclick="showChapter('civil-responsabilite')">
-    La responsabilité civile
-</li>
-</ul>
-
-</div>
-
-
-<!-- 2 DROIT PENAL -->
-<div class="subject">
-
-<h3>2. ⚔️ Droit pénal</h3>
-
-<ul>
-
-<li onclick="showChapter('penal-principes')">
-    Principes du droit pénal
-</li>
-
-<li onclick="showChapter('penal-infraction')">
-    L'infraction
-</li>
-
-<li onclick="showChapter('penal-responsabilite')">
-    La responsabilité pénale
-</li>
-
-<li onclick="showChapter('penal-peines')">
-    Les peines
-</li>
-
-<li onclick="showChapter('penal-procedure')">
-    La procédure pénale
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- 3 CONSTITUTIONNEL -->
-<div class="subject">
-
-<h3>3. 🏛️ Droit constitutionnel</h3>
-
-<ul>
-
-<li onclick="showChapter('constitution-etat')">
-    Constitution et État
-</li>
-
-<li onclick="showChapter('constitution-souverainete')">
-    Souveraineté
-</li>
-
-<li onclick="showChapter('constitution-institutions')">
-    Institutions
-</li>
-
-<li onclick="showChapter('constitution-pouvoirs')">
-    Séparation des pouvoirs
-</li>
-
-<li onclick="showChapter('constitution-droits')">
-    Droits et libertés
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- 4 ADMINISTRATIF -->
-<div class="subject">
-
-<h3>4. 🏢 Droit administratif</h3>
-
-<ul>
-
-<li onclick="showChapter('admin-administration')">
-    Administration
-</li>
-
-<li onclick="showChapter('admin-service')">
-    Service public
-</li>
-
-<li onclick="showChapter('admin-actes')">
-    Actes administratifs
-</li>
-
-<li onclick="showChapter('admin-police')">
-    Police administrative
-</li>
-
-<li onclick="showChapter('admin-responsabilite')">
-    Responsabilité administrative
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- 5 AFFAIRES -->
-<div class="subject">
-
-<h3>5. 💼 Droit des affaires</h3>
-
-<ul>
-
-<li onclick="showChapter('affaires-commercant')">
-    Commerçant
-</li>
-
-<li onclick="showChapter('affaires-entreprise')">
-    Entreprise
-</li>
-
-<li onclick="showChapter('affaires-societes')">
-    Sociétés
-</li>
-
-<li onclick="showChapter('affaires-contrats')">
-    Contrats commerciaux
-</li>
-
-<li onclick="showChapter('affaires-ohada')">
-    OHADA
-</li>
-
-</ul>
-
-</div>
-
-
-<!-- 6 TRAVAIL -->
-<div class="subject">
-
-<h3>6. 👷 Droit du travail</h3>
-
-<ul>
-
-<li onclick="showChapter('travail-contrat')">
-    Contrat de travail
-</li>
-
-<li onclick="showChapter('travail-droits')">
-    Droits et obligations
-</li>
-
-<li onclick="showChapter('travail-salaire')">
-    Salaire
-</li>
-
-<li onclick="showChapter('travail-rupture')">
-    Rupture du contrat
-</li>
-
-<li onclick="showChapter('travail-relations')">
-    Relations professionnelles
-</li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<!-- COCC -->
-<div class="cocc">
-
-<h3>📖 COCC — Obligations et contrats</h3>
+<h1>
+Bienvenue sur <span>DROIT</span>
+</h1>
 
 <p>
-Le <strong>Code des obligations civiles et commerciales (COCC)</strong>
-est utilisé comme référence pour structurer les cours portant notamment
-sur les obligations et les contrats.
+Votre assistant juridique moderne
 </p>
 
-<p style="margin-top:10px;">
-Cette plateforme a une vocation pédagogique et ne remplace pas
-les conseils d'un professionnel du droit.
+<button>
+COMMENCER
+</button>
+
+</div>
+
+
+<section>
+
+<div class="box">
+
+<h2>Pourquoi DROIT a été créé ?</h2>
+
+<p>
+L'application DROIT a été créée pour aider les étudiants,
+les passionnés du droit et toute personne souhaitant apprendre
+les règles juridiques facilement.
 </p>
 
 </div>
 
 
-<!-- ===================== -->
-<!-- CHAPITRES -->
-<!-- ===================== -->
+<div class="box">
 
-<div id="civil-intro" class="chapter">
-<h2>Droit civil — Introduction</h2>
+<h2>À qui s'adresse DROIT ?</h2>
+
 <p>
-Le droit civil constitue une branche fondamentale du droit privé.
-Il organise notamment les relations entre les personnes, les biens,
-les obligations et les contrats.
+👨‍🎓 Étudiants en droit<br>
+⚖️ Futurs juristes<br>
+👩‍⚖️ Professionnels du domaine juridique<br>
+📚 Toute personne intéressée par le droit
 </p>
-<a class="back" href="#cours">← Retour aux cours</a>
+
 </div>
 
 
-<div id="civil-personnes" class="chapter">
-<h2>Droit civil — Les personnes</h2>
-<p>
-Ce chapitre étudie la personnalité juridique, les personnes physiques
-et morales ainsi que leurs principaux droits.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
+<div class="box">
 
-
-<div id="civil-biens" class="chapter">
-<h2>Droit civil — Les biens</h2>
-<p>
-Les biens sont les éléments susceptibles d'appropriation et présentant
-une valeur juridique. Ils peuvent notamment être distingués entre
-biens meubles et immeubles.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="civil-obligations" class="chapter">
-<h2>Droit civil — Les obligations</h2>
-<p>
-Une obligation est un lien juridique en vertu duquel une personne peut
-être tenue d'accomplir une prestation au profit d'une autre.
-</p>
-<h3>COCC</h3>
-<p>
-Le COCC sert de base pour structurer l'étude des obligations civiles
-et commerciales dans le contexte juridique concerné.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="civil-contrats" class="chapter">
-<h2>Droit civil — Les contrats</h2>
-<p>
-Le contrat est un accord de volontés destiné à produire des effets
-juridiques. L'étude porte notamment sur sa formation, son exécution
-et les conséquences de son inexécution.
-</p>
-<h3>COCC</h3>
-<p>
-Le COCC est utilisé comme référence pour l'organisation pédagogique
-de cette partie du cours.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="civil-responsabilite" class="chapter">
-<h2>Droit civil — La responsabilité civile</h2>
-<p>
-La responsabilité civile concerne les mécanismes permettant de réparer
-un dommage lorsqu'une personne est juridiquement tenue d'en répondre.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<!-- PENAL -->
-
-<div id="penal-principes" class="chapter">
-<h2>Droit pénal — Principes du droit pénal</h2>
-<p>
-Étude des principes fondamentaux qui encadrent le droit pénal et
-l'application de la loi pénale.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="penal-infraction" class="chapter">
-<h2>Droit pénal — L'infraction</h2>
-<p>
-L'infraction désigne un comportement interdit et sanctionné par
-la loi pénale. Ce chapitre présente ses principaux éléments.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="penal-responsabilite" class="chapter">
-<h2>Droit pénal — La responsabilité pénale</h2>
-<p>
-La responsabilité pénale concerne les conditions dans lesquelles
-une personne peut être tenue responsable d'une infraction.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="penal-peines" class="chapter">
-<h2>Droit pénal — Les peines</h2>
-<p>
-Les peines sont les sanctions prévues par le droit pénal pour
-réprimer les infractions.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="penal-procedure" class="chapter">
-<h2>Droit pénal — La procédure pénale</h2>
-<p>
-La procédure pénale organise les différentes étapes permettant
-de rechercher, poursuivre et juger les infractions.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<!-- CONSTITUTIONNEL -->
-
-<div id="constitution-etat" class="chapter">
-<h2>Droit constitutionnel — Constitution et État</h2>
-<p>
-Étude de la Constitution, de son rôle dans l'organisation de l'État
-et du fonctionnement des institutions.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="constitution-souverainete" class="chapter">
-<h2>Droit constitutionnel — Souveraineté</h2>
-<p>
-La souveraineté désigne le pouvoir suprême exercé dans le cadre
-de l'organisation politique de l'État.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="constitution-institutions" class="chapter">
-<h2>Droit constitutionnel — Institutions</h2>
-<p>
-Présentation des principales institutions de l'État et de leurs
-rôles respectifs.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="constitution-pouvoirs" class="chapter">
-<h2>Droit constitutionnel — Séparation des pouvoirs</h2>
-<p>
-La séparation des pouvoirs vise à organiser les fonctions de l'État
-et à éviter leur concentration excessive.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="constitution-droits" class="chapter">
-<h2>Droit constitutionnel — Droits et libertés</h2>
-<p>
-Étude des principaux droits et libertés reconnus et protégés par
-l'ordre constitutionnel.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<!-- ADMINISTRATIF -->
-
-<div id="admin-administration" class="chapter">
-<h2>Droit administratif — Administration</h2>
-<p>
-L'administration regroupe les institutions et services chargés
-de mettre en œuvre les politiques publiques et les décisions de l'État.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="admin-service" class="chapter">
-<h2>Droit administratif — Service public</h2>
-<p>
-Le service public correspond à une activité d'intérêt général
-prise en charge ou contrôlée par une personne publique selon
-les règles applicables.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="admin-actes" class="chapter">
-<h2>Droit administratif — Actes administratifs</h2>
-<p>
-Les actes administratifs sont des décisions prises par
-l'administration dans l'exercice de ses compétences.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="admin-police" class="chapter">
-<h2>Droit administratif — Police administrative</h2>
-<p>
-La police administrative vise notamment à préserver l'ordre public
-dans les conditions prévues par la loi.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="admin-responsabilite" class="chapter">
-<h2>Droit administratif — Responsabilité administrative</h2>
-<p>
-Étude des règles relatives à la responsabilité de l'administration
-et à la réparation des dommages dans le cadre applicable.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<!-- AFFAIRES -->
-
-<div id="affaires-commercant" class="chapter">
-<h2>Droit des affaires — Commerçant</h2>
-<p>
-Étude de la notion de commerçant, des conditions d'accès à l'activité
-commerciale et des obligations liées à cette qualité.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="affaires-entreprise" class="chapter">
-<h2>Droit des affaires — Entreprise</h2>
-<p>
-L'entreprise est étudiée à travers son activité, son organisation
-et son environnement juridique et économique.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="affaires-societes" class="chapter">
-<h2>Droit des affaires — Sociétés</h2>
-<p>
-Étude des principales règles relatives à la création,
-au fonctionnement et à la vie des sociétés.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="affaires-contrats" class="chapter">
-<h2>Droit des affaires — Contrats commerciaux</h2>
-<p>
-Les contrats commerciaux organisent les relations juridiques
-entre les acteurs économiques.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="affaires-ohada" class="chapter">
-<h2>Droit des affaires — OHADA</h2>
-<p>
-L'OHADA vise à harmoniser le droit des affaires dans ses États membres.
-Cette partie présente les grands domaines du droit OHADA.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<!-- TRAVAIL -->
-
-<div id="travail-contrat" class="chapter">
-<h2>Droit du travail — Contrat de travail</h2>
-<p>
-Étude de la formation, des éléments et de l'exécution du contrat
-de travail.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="travail-droits" class="chapter">
-<h2>Droit du travail — Droits et obligations</h2>
-<p>
-Présentation des principaux droits et obligations respectifs
-de l'employeur et du travailleur.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="travail-salaire" class="chapter">
-<h2>Droit du travail — Salaire</h2>
-<p>
-Étude des règles relatives au salaire, à son paiement et aux
-principales protections applicables.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="travail-rupture" class="chapter">
-<h2>Droit du travail — Rupture du contrat</h2>
-<p>
-Présentation des principales situations pouvant entraîner la fin
-du contrat de travail et de leurs conséquences.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-<div id="travail-relations" class="chapter">
-<h2>Droit du travail — Relations professionnelles</h2>
-<p>
-Étude des relations entre travailleurs, employeurs et représentants
-dans le cadre professionnel.
-</p>
-<a class="back" href="#cours">← Retour aux cours</a>
-</div>
-
-
-</main>
-
-
-<!-- À PROPOS -->
-<section class="container" id="apropos">
-
-<h2 class="section-title">
-    ℹ️ À propos de DROIT
-</h2>
-
-<div class="cocc">
+<h2>Apprendre le droit autrement</h2>
 
 <p>
-<strong>DROIT</strong> est une plateforme pédagogique destinée à
-faciliter l'apprentissage et la compréhension du droit.
-</p>
-
-<p style="margin-top:12px;">
-Les informations présentées sont destinées à l'apprentissage
-et ne constituent pas un avis juridique personnalisé.
+Des cours simples, organisés et accessibles
+sur téléphone et ordinateur.
 </p>
 
 </div>
@@ -888,102 +171,18 @@ et ne constituent pas un avis juridique personnalisé.
 </section>
 
 
-<!-- FOOTER -->
 <footer>
 
-<div class="name">
-    DROIT — Votre assistant juridique
-</div>
-
 <p>
-    Créé par <strong>IBRAHIMA SRY KANTE</strong>
+DROIT © 2026
 </p>
 
 <p>
-    <strong>Fondateur du site</strong>
-</p>
-
-<p>
-    📞 <a href="tel:+221766587919">
-        76 658 79 19
-    </a>
-</p>
-
-<p style="margin-top:12px; font-size:13px;">
-    © 2026 DROIT — Tous droits réservés
+Créé par IBRAHIMA SORY KANTE
 </p>
 
 </footer>
 
-
-<script>
-
-/* AFFICHER UN CHAPITRE */
-function showChapter(id) {
-
-    // Cacher tous les chapitres
-    const chapters = document.querySelectorAll(".chapter");
-
-    chapters.forEach(function(chapter) {
-        chapter.classList.remove("active");
-    });
-
-    // Afficher le chapitre choisi
-    const selected = document.getElementById(id);
-
-    if (selected) {
-        selected.classList.add("active");
-
-        selected.scrollIntoView({
-            behavior: "smooth",
-            block: "start"
-        });
-    }
-}
-
-
-/* RECHERCHE */
-function searchCourses() {
-
-    const input =
-        document.getElementById("searchInput").value.toLowerCase().trim();
-
-    const subjects =
-        document.querySelectorAll(".subject");
-
-    subjects.forEach(function(subject) {
-
-        const text =
-            subject.innerText.toLowerCase();
-
-        if (input === "" || text.includes(input)) {
-            subject.style.display = "";
-        } else {
-            subject.style.display = "none";
-        }
-
-    });
-
-}
-
-
-/* LIEN DE RETOUR */
-document.querySelectorAll(".back").forEach(function(button) {
-
-    button.addEventListener("click", function() {
-
-        const chapters =
-            document.querySelectorAll(".chapter");
-
-        chapters.forEach(function(chapter) {
-            chapter.classList.remove("active");
-        });
-
-    });
-
-});
-
-</script>
 
 </body>
 </html>
