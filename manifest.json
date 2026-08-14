@@ -1,0 +1,17 @@
+{
+  "name": "DROIT - Votre assistant juridique",
+  "short_name": "DROIT",
+  "description": "Application juridique pour apprendre le droit facilement.",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#071a3d",
+  "theme_color": "#d4af37",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
